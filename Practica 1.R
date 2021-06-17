@@ -61,7 +61,7 @@ VPU= c(7.9, 7.2, 6.1, 6.3)
 
     #Vector 3: antes del 2005 (TRUE/FALSE)
 
-VF= c('True','True','False','False')
+VF= c(True,True,False,False)
 
 #7. Saque las siguientes funciones con base algún vector numérico del ejercicio 6 (Vector 2: Puntuación), haga investigación de los mismos
 
@@ -97,7 +97,7 @@ which.max(VPU)
 #devuelve el ´indice del elemento maximo de ´ x
 
 which.min(VPU)
-#devuelve el ´indice del elemento m´inimo de x
+#devuelve el ´indice del elemento miinimo de x
 
 Sqrt(VPU)
 #raiz cuadrada
@@ -105,8 +105,8 @@ Sqrt(VPU)
 
 #8. Genere un vector con valores del 1 al 100
 
-Vector_count = rep(1:100)
+Vector_seq = (1:100)
 
 #9. Genere un vector con valores del 1 al 100 de 10 en 10
 
-Vector_doublecount = rep(1:100, by=10)
+vector_seq = seq(1,100, by=10)
