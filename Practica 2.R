@@ -114,21 +114,25 @@ View (mispacientes)
 
 #Haga una descripción de datos cuantitativos
 
-Max
+max(mispacientes$edadcaso)
 
-Min
+min(mispacientes$edadcaso)
 
-Mean
+mean(mispacientes$edadcaso)
 
-Sd(dataframe$columna)
+sd(mispacientes$edadcaso)
 
-Round (Sd(dataframe$columna),2)
+round(sd(mispacientes$edadcaso),2)
 
-Quantile
+quantile(mispacientes$edadcaso)
 
 #Saque la frecuencia absoluta de la glucemia basal
 
+table(mispacientes$genero)
+
 #Saque la frecuencia relativa de genero
+
+table(mispacientes$genero)/length(mispacientes$genero)
 
 #Investigue alguna forma de representar gráficamente las variables edad y genero
 
