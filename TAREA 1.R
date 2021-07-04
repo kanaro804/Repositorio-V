@@ -58,3 +58,53 @@ COVID_19_Encuesta_a_estudiantes = mutate(COVID_19_Encuesta_a_estudiantes,TimeSoc
 
 
 #h.	Debe entregar el código, los resultados de ejecución y una pequeña descripción de la idea que expuso en el modelo exploratorio 
+
+
+#3.	Una investigación realizada por la Universidad Hispanoamérica detalla que los salarios mínimos para ciertos países se conforman de la siguiente forma: 
+
+salarios=c(432.21,239.48,249.94,373.22,233.86,366,331.11,258.86,349.20,31.60)
+
+
+#a. Encontrar el salario promedio de estos países.
+
+
+names(salarios)=c('Argentina','Bolivia','Brazil','Chile','Colombia','Ecuador','Paraguay', 'Peru','Uruguay', 'Venezuela')
+
+View(data.frame(salarios))
+
+mean(salarios)
+
+
+#b. Encontrar la desviación estándar de la muestra.
+
+
+sd(salarios)
+
+
+#c. Encuentre los salarios mínimos más altos y más bajos de la muestra
+
+min(salarios)
+
+max(salarios)
+
+
+
+#4.	De la base de datos proporciona, genere las estructuras donde muestre la cantidad de facturas hechas por empleado, además muestre el nombre de los empleados. Ejemplo: 
+
+
+
+#5.	A continuación, se les muestra el ingreso de unidades de sacos de café por un periodo de tiempo son: 7, 6, 5, 8, 7, 7, 7, 5, 6, 8 . Calcular la desviación estándar.
+
+
+SacosCafeXtiempo=c( 7L, 6L, 5L, 8L, 7L, 7L, 7L, 5L, 6L, 8L)
+
+sd(SacosCafeXtiempo)
+
+
+#6.	Considere los datos en el ejercicio 5. Hallar los percentiles 0, 25, 50, 75 y 100
+
+p = c(0.25,0.5,0.75)
+
+
+
+
