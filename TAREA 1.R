@@ -35,6 +35,7 @@ View(Var_CovidDatos)
 
 
 
+
 #c.	Filter
 
 View(filter(Var_CovidDatos,Prefered.social.media.platform=="Instagram"))
@@ -42,8 +43,8 @@ View(filter(Var_CovidDatos,Prefered.social.media.platform=="Instagram"))
 
 #d.	Group by 
 
-dataAgrupada=iris%>%group_by()%>%
-  summarise()
+COVID_19_Encuesta_a_estudiantes = ID %>% group_by(Age.of.Subject) %>%
+  sumarise = (n=n())
 
 #e.	Arrege 
 
@@ -55,6 +56,7 @@ View(arrange(COVID_19_Encuesta_a_estudiantes,Rating.of.Online.Class.experience))
 COVID_19_Encuesta_a_estudiantes = mutate(COVID_19_Encuesta_a_estudiantes,TimeSocialMediaPerWeek= Time.spent.on.social.media*7L)
 
 #G.Select
+
 
 
 #h.	Debe entregar el código, los resultados de ejecución y una pequeña descripción de la idea que expuso en el modelo exploratorio 
@@ -105,6 +107,28 @@ sd(SacosCafeXtiempo)
 
 p = c(0.25,0.5,0.75)
 
+quantile(SacosCafeXtiempo)
 
 
+#7.	Realice una pequeña investigación sobre qué es stringr de la colección de paquetes Tidyvers 
+
+#Coleccion de paquetes.
+
+#El Tidyverse es una colección de paquetes de R que comparten una filosofía y API común para el tratamiento de datos de tipo tabular. A los que se les llama "tidy data" (datos ordenados).La filosofía básica de las funciones de los paquetes del Tidyverse es recibir datos "tidy" y devolver como resultados datos del mismo tipo. Al ser los datos de entrada y salida de las funciones del mismo tipo es posible encadenar diferentes funciones para realizar así tareas complejas de una forma eficiente. 
+
+#Los paquetes que forman parte del tidyverso son:
+  
+#readr (ya la estamos usando)
+#dplyr (Clase anterior)
+#tidyr (Hoy)
+#ggplot2 (Próxima clase)
+#purrr (En clase sobre loops)
+#forcats (Para variables categóricas)
+#stringr (Para carácteres, Palabras)
+
+#Fuentes:
+
+#Rodriguez, D.(2021). Introducción al Tidyverse. https://www.analyticslane.com/2021/02/10/introduccion-al-tidyverse/
+
+#Ano nimo. (S.F). Capítulo 3 El Tidyverso y tidyr. https://derek-corcoran-barrios.github.io/Libro/_book/tidyverso.html
 
