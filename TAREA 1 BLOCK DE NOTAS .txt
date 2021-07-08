@@ -1,0 +1,127 @@
+Pentaho_User
+##Pentaho_User2020
+
+1.	Cree un vector que contenga las notas de 10 estudiantes, debe utilizar la funci�n names(), adem�s aplique un plot. 
+
+NotasEstudiantes= c(10L,6L,5L,8L,8L,7L,9L,9L,6L,5L)
+
+names(NotasEstudiantes)=c("Sofia","Alex","Marco","Isabel","Jose","Diana","Susan","Gary","Maria","Juan")
+
+View(data.frame(NotasEstudiantes))
+
+plot(NotasEstudiantes, type = 'l')
+
+#2.Genere una base de datos en XLS, imp�rtela (trate que la base de datos contenga columnas cuantitativas, es decir campos como, por ejemplo, edad, a�o de nacimiento, factores, cantidad de ventas, cantidad de compras, boolean), genere un proceso exploratorio y de transformaci�n de datos, donde utilice las siguientes funciones: 
+
+COVID_19_Encuesta_a_estudiantes = data.frame(COVID_19_Encuesta_a_estudiantes)
+class(COVID_19_Encuesta_a_estudiantes)
+
+head(COVID_19_Encuesta_a_estudiantes)
+
+#a.	Guardar datos en variables temporales, es decir hijas de la variable de importaci�n 
+
+Var_CovidDatos=select(COVID_19_Encuesta_a_estudiantes,ID,Age.of.Subject, Time.spent.on.Online.Class,Rating.of.Online.Class.experience,  Time.spent.on.self.study, Time.spent.on.fitness, Time.spent.on.sleep,  Time.spent.on.social.media, Prefered.social.media.platform,Time.spent.on.TV, Number.of.meals.per.day, Change.in.your.weight)
+
+View(Var_CovidDatos)
+
+
+#b.	Al menos 2 operaciones aritm�ticas entre vectores
+
+
+
+
+#c.	Filter
+
+View(filter(Var_CovidDatos,Prefered.social.media.platform=="Instagram"))
+
+
+#d.	Group by 
+
+COVID_19_Encuesta_a_estudiantes = ID %>% group_by(Age.of.Subject) %>%
+  sumarise = (n=n())
+
+#e.	Arrege 
+
+View(arrange(COVID_19_Encuesta_a_estudiantes,Rating.of.Online.Class.experience))
+
+
+#f.	Mutate 
+
+COVID_19_Encuesta_a_estudiantes = mutate(COVID_19_Encuesta_a_estudiantes,TimeSocialMediaPerWeek= Time.spent.on.social.media*7L)
+
+#G.Select
+
+
+
+#h.	Debe entregar el c�digo, los resultados de ejecuci�n y una peque�a descripci�n de la idea que expuso en el modelo exploratorio 
+
+
+#3.	Una investigaci�n realizada por la Universidad Hispanoam�rica detalla que los salarios m�nimos para ciertos pa�ses se conforman de la siguiente forma: 
+
+salarios=c(432.21,239.48,249.94,373.22,233.86,366,331.11,258.86,349.20,31.60)
+
+
+#a. Encontrar el salario promedio de estos pa�ses.
+
+
+names(salarios)=c('Argentina','Bolivia','Brazil','Chile','Colombia','Ecuador','Paraguay', 'Peru','Uruguay', 'Venezuela')
+
+View(data.frame(salarios))
+
+mean(salarios)
+
+
+#b. Encontrar la desviaci�n est�ndar de la muestra.
+
+
+sd(salarios)
+
+
+#c. Encuentre los salarios m�nimos m�s altos y m�s bajos de la muestra
+
+min(salarios)
+
+max(salarios)
+
+
+
+#4.	De la base de datos proporciona, genere las estructuras donde muestre la cantidad de facturas hechas por empleado, adem�s muestre el nombre de los empleados. Ejemplo: 
+
+
+
+#5.	A continuaci�n, se les muestra el ingreso de unidades de sacos de caf� por un periodo de tiempo son: 7, 6, 5, 8, 7, 7, 7, 5, 6, 8 . Calcular la desviaci�n est�ndar.
+
+
+SacosCafeXtiempo=c( 7L, 6L, 5L, 8L, 7L, 7L, 7L, 5L, 6L, 8L)
+
+sd(SacosCafeXtiempo)
+
+
+#6.	Considere los datos en el ejercicio 5. Hallar los percentiles 0, 25, 50, 75 y 100
+
+p = c(0.25,0.5,0.75)
+
+quantile(SacosCafeXtiempo)
+
+
+#7.	Realice una peque�a investigaci�n sobre qu� es stringr de la colecci�n de paquetes Tidyvers 
+
+#Coleccion de paquetes.
+
+#El Tidyverse es una colecci�n de paquetes de R que comparten una filosof�a y API com�n para el tratamiento de datos de tipo tabular. A los que se les llama "tidy data" (datos ordenados).La filosof�a b�sica de las funciones de los paquetes del Tidyverse es recibir datos "tidy" y devolver como resultados datos del mismo tipo. Al ser los datos de entrada y salida de las funciones del mismo tipo es posible encadenar diferentes funciones para realizar as� tareas complejas de una forma eficiente. 
+
+#Los paquetes que forman parte del tidyverso son:
+  
+#readr (ya la estamos usando)
+#dplyr (Clase anterior)
+#tidyr (Hoy)
+#ggplot2 (Pr�xima clase)
+#purrr (En clase sobre loops)
+#forcats (Para variables categ�ricas)
+#stringr (Para car�cteres, Palabras)
+
+#Fuentes:
+
+#Rodriguez, D.(2021). Introducci�n al Tidyverse. https://www.analyticslane.com/2021/02/10/introduccion-al-tidyverse/
+
+#Ano nimo. (S.F). Cap�tulo 3 El Tidyverso y tidyr. https://derek-corcoran-barrios.github.io/Libro/_book/tidyverso.html
