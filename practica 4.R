@@ -12,7 +12,6 @@ library('odbc')
 library('dbplyr')
 install.packages("ggplot2")
 install.packages("plotly")
-library('plotly')
 
 DB_Northwind <- DBI::dbConnect(odbc::odbc(),
                                 Driver = "SQL Server",
@@ -38,4 +37,14 @@ View(Agrupacion_por_tienda)
 #· Gpplot, plot, qplot o plotly
 
 
-qplot
+qplot (store_id,`sum(quantity)`,data =Agrupacion_por_tienda, color =`sum(quantity)`,size=3,
+       xlab = " Tienda " , ylab = " Cantidad ",main= "Inventario por tienda ")
+
+ggplot(data = Agrupacion_por_tienda, aes(Agrupacion_por_tienda$))
+
+
+
+
+
+
+
