@@ -1,0 +1,81 @@
+#Para la elaboración de esta tarea se debe utilizar las bases proporcionadas por el profesor
+
+library(dplyr)
+library(tidyverse)
+library("DBI")
+library("odbc")
+library("dbplyr")
+library(ggplot2)
+
+
+#1. Seleccione una base datos y realice un análisis exploratorio
+
+#U.S. International Air Traffic data(1990-2020)
+
+summary(International_Report_Departures)
+
+#https://www.kaggle.com/parulpandey/us-international-air-traffic-data
+
+
+
+
+#b. Debe generar al menos 4 plots explicando el análisis que sacó de cada uno
+
+#1
+
+plot(as.factor(International_Report_Departures$Year))
+
+#En este grafico podemos encontrar a traves del tiempo desde el año 1990 hasta el 2020 cuales han sido el movimiento de los vuelos internacionales, el cual se puede ver que su cambio ha sido de manera creciente hasta el año 2020, el cual hipotericamente podriamos asociarlo con el COVID y la suspension que hubo por meses de los vuelos
+
+#2
+
+plot(as.factor(International_Report_Departures$carriergroup))
+
+#Con este plot podemos visualizar cual es el grupo de carriers con mas presencia en la base de datos siendo el grupo 1 el que mas se repite en la base de datos 
+
+#3
+
+
+plot(as.factor())
+
+
+#4
+
+totalfltrado=filter(International_Report_Departures,Year=='2020', Month=='3')
+
+plot(as.factor(totalfltrado$Charter))
+
+#Con este grafico puedo visualizar los datos de los chartes del año 2020 y el mes 3
+
+
+#c. Haga la búsqueda de correlación de variables y explíquelas (matriz)
+
+
+plot(select(International_Report_Departures, airlineid,Charter))
+
+#d. Utilice mínimo 4 funciones de dplyr para manipular datos
+
+#1. SELECT
+
+DatosIRD= select(International_Report_Departures,Year,Month,airlineid,carrier,type,Scheduled,Charter)
+
+View(DatosIRD)
+
+#2. FILTER
+
+View(filter(DatosIRD,carrier=='AC'))
+
+
+
+#3. Arrange
+
+view(arrange(DatosIRD,Year))
+
+
+#4. GROUP BY
+
+DataAgrupada=DatosIRD%>%group_by(Month)%>%
+  summarise(Promedio=mean(Year))
+  
+
+#e. Cree al menos 2 funciones
